@@ -1,4 +1,3 @@
-"use client";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -18,6 +17,7 @@ import { FolderCreate } from "./action";
 const Dialogbox = ({ imageData }: { imageData: string }) => {
   const [album, setAlbum] = useState("");
   const [open, setOpen] = useState(false);
+
   return (
     <div>
       <Dialog open={open} onOpenChange={setOpen}>
@@ -30,8 +30,7 @@ const Dialogbox = ({ imageData }: { imageData: string }) => {
           <DialogHeader>
             <DialogTitle>Add to Album</DialogTitle>
             <DialogDescription>
-              Enter the album name for the picture you want to add in the album
-              . Click Add to Album when you're done.
+              Enter the album name for the picture you want to add in the album. Click Add to Album when you&apos;re done.
             </DialogDescription>
           </DialogHeader>
           <div className="grid gap-4 py-4">
@@ -68,4 +67,3 @@ const Dialogbox = ({ imageData }: { imageData: string }) => {
 };
 
 export default Dialogbox;
-
