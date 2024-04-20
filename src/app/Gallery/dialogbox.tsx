@@ -15,7 +15,7 @@ import { useState } from "react";
 import { AiFillFolderAdd } from "react-icons/ai";
 import { FolderCreate } from "./action";
 
-const Dialogbox = ({imageData}:{imageData:string}) => {
+const Dialogbox = ({ imageData }: { imageData: string }) => {
   const [album, setAlbum] = useState("");
   const [open, setOpen] = useState(false);
   return (
@@ -42,7 +42,7 @@ const Dialogbox = ({imageData}:{imageData:string}) => {
               <Input
                 id="album-name"
                 value={album}
-                onChange={(e :any) => {
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                   setAlbum(e.target.value);
                 }}
                 placeholder="Enter the Album Name Here...."
@@ -53,9 +53,9 @@ const Dialogbox = ({imageData}:{imageData:string}) => {
           <DialogFooter>
             <Button
               type="submit"
-              onClick={async() => {
+              onClick={async () => {
                 setOpen(false);
-                await FolderCreate(album,imageData)
+                await FolderCreate(album, imageData);
               }}
             >
               Add to Album
@@ -68,3 +68,4 @@ const Dialogbox = ({imageData}:{imageData:string}) => {
 };
 
 export default Dialogbox;
+
